@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MD. Rasool Baig | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        /* NAVBAR */
+        header {
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #080808;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00e5ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* HOME */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background:
+                radial-gradient(circle at 80% 40%, #003b45, transparent 35%),
+                #080808;
+        }
+
+        .hero-text {
+            max-width: 800px;
+        }
+
+        .small-text {
+            color: #00e5ff;
+            letter-spacing: 4px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #00e5ff;
+        }
+
+        .hero h2 {
+            color: #dc0e0e;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #11049f;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #00e5ff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px #00e5ff;
+        }
+
+        .second {
+            background: transparent;
+            color: white;
+            border: 1px solid #00e5ff;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #00e5ff;
+            margin: 15px auto;
+        }
+
+        /* ABOUT */
+        .about-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 35px;
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .about-box h3 {
+            color: #00e5ff;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            width: 250px;
+            padding: 30px;
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .skill-card h3 {
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* PROJECTS */
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            width: 350px;
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .project-number {
+            color: #00e5ff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            font-size: 25px;
+            margin: 15px 0;
+        }
+
+        .project-card p {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+            background: #111;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin: 18px 0;
+            color: #ccc;
+        }
+
+        .contact-box a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050505;
+            color: #777;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .btn {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">Rasool.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-text">HELLO, I'M</p>
+
+            <h1>
+                MD. Rasool <span>Baig</span>
+            </h1>
+
+            <h2>CSE (AIML) Student</h2>
+
+            <p>
+                I am a first-year CSE (AIML) student interested in
+                Artificial Intelligence and Editing.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn second">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-box">
+
+            <h3>Who Am I?</h3>
+
+            <p>
+                I am a first-year CSE (AIML) student at
+                Dr. RVR NRI University. I am interested in
+                Artificial Intelligence, technology and editing.
+                I enjoy learning new skills and building creative projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>🎬 Editing</h3>
+                <p>
+                    Creative photo and video editing.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>🤖 AI</h3>
+                <p>
+                    Interested in Artificial Intelligence
+                    and Machine Learning.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>💻 CSE</h3>
+                <p>
+                    Learning computer science and programming.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <div class="project-number">01</div>
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website created to
+                    showcase my profile, skills and projects.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">02</div>
+
+                <h3>AI Study Assistant</h3>
+
+                <p>
+                    An AI-based study assistant designed to
+                    help students with their college studies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-box">
+
+            <p>
+                📧 <strong>Email:</strong>
+                <a href="mailto:rasoolbaig@2000gimal.com">
+                    rasoolbaig@2000gimal.com
+                </a>
+            </p>
+
+            <p>
+                📸 <strong>Instagram:</strong>
+                <a href="https://instagram.com/_rassu_.x.__"
+                   target="_blank">
+                    @_rassu_.x.__
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 MD. Rasool Baig | CSE (AIML)
+        </p>
+
+    </footer>
+
+
+    <script>
+        console.log("Welcome to MD. Rasool Baig's Portfolio!");
+
+        document.querySelectorAll("nav a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                console.log(
+                    "Opening: " + this.textContent
+                );
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
